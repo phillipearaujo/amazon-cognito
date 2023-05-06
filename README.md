@@ -2,27 +2,27 @@
 Adicionando Segurança em APIs na AWS com Amazon Cognito
 
 
-#Roteiro para o desenvolvimento da atividade prática do DIO Live Coding do dia 17/11/2021
-##Serviços AWS utilizados
+# Roteiro para o desenvolvimento da atividade prática do DIO Live Coding do dia 17/11/2021
+## Serviços AWS utilizados
 
     Amazon Cognito
     Amazon DynamoDB
     Amazon API Gateway
     AWS Lambda
 
-##Etapas do desenvolvimento
-###Criando uma API REST no Amazon API Gateway
+## Etapas do desenvolvimento
+### Criando uma API REST no Amazon API Gateway
 
     API Gateway Dashboard -> Create API -> REST API -> Build
     Protocol - REST -> Create new API -> API name [dio_live_api] -> Endpoint Type - Regional -> Create API
     Resources -> Actions -> Create Resource -> Resource Name [Items] -> Create Resource
 
-###No Amazon DynamoDB
+### No Amazon DynamoDB
 
     DynamoDB Dashboard -> Tables -> Create table -> Table name [Items] -> Partition key [id] -> Create table
 
-###No AWS Lambda
-####Função para inserir item
+### No AWS Lambda
+#### Função para inserir item
 
     Lambda Dashboard -> Create function -> Name [put_item_function] -> Create function
     Inserir código da função put_item_function.js disponível na pasta /src -> Deploy
@@ -32,13 +32,13 @@ Adicionando Segurança em APIs na AWS com Amazon Cognito
     Resources -> Add arn -> Selecionar o arn da tabela criada no DynamoDB -> Add
     Review policy -> Name [lambda_dynamodb_putItem_policy] -> Create policy
 
-###Integrando o API Gateway com o Lambda backend
+### Integrando o API Gateway com o Lambda backend
 
     API Gateway Dashboard -> Selecionar a API criada -> Resources -> Selecionar o resource criado -> Action -> Create method - POST
     Integration type -> Lambda function -> Use Lambda Proxy Integration -> Lambda function -> Selecionar a função Lambda criada -> Save
     Actions -> Deploy API -> Deployment Stage -> New Stage [dev] -> Deploy
 
-###No POSTMAN
+### No POSTMAN
 
     Add Request -> Method POST -> Copiar o endpoint gerado no API Gateway
     Body -> Raw -> JSON -> Adicionar o seguinte body
@@ -60,7 +60,7 @@ Adicionando Segurança em APIs na AWS com Amazon Cognito
 
     Send
 
-###No Amazon Cognito
+### No Amazon Cognito
 
     Cognito Dashboard -> Manage User Pools -> Create a User Pool -> Pool name [TestPool]
 
@@ -88,7 +88,7 @@ Adicionando Segurança em APIs na AWS com Amazon Cognito
 
     Domain name -> Domain prefix [diolive] -> Save
 
-###Criando um autorizador do Amazon Cognito para uma API REST no Amazon API Gateway
+### Criando um autorizador do Amazon Cognito para uma API REST no Amazon API Gateway
 
     API Gateway Dashboard -> Selecionar a API criada -> Authorizers -> Create New Authorizer
 
@@ -96,7 +96,7 @@ Adicionando Segurança em APIs na AWS com Amazon Cognito
 
     Resources -> selecionar o resource criado -> selecionar o método criado -> Method Request -> Authorization - Selecionar o autorizador criado
 
-###No POSTMAN
+### No POSTMAN
 
     Add request -> Authorization
 
