@@ -2,7 +2,7 @@
 Adicionando Segurança em APIs na AWS com Amazon Cognito
 
 
-# Roteiro para o desenvolvimento da atividade prática do DIO Live Coding do dia 17/11/2021
+# Roteiro para o desenvolvimento da atividade prática do DIO Live Coding
 ## Serviços AWS utilizados
 
     Amazon Cognito
